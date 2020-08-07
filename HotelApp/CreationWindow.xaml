@@ -1,0 +1,66 @@
+﻿<Window x:Class="HotelApp.CreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelApp"
+        mc:Ignorable="d"
+        Title="Nowa Rezerwacja" Height="450" Width="800">
+    <Grid Height="440" VerticalAlignment="Top" HorizontalAlignment="Left" Width="800">
+        <Grid RenderTransformOrigin="0,0" Margin="0,0,-1,7">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.094"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="550*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="25*" />
+                <RowDefinition Height="100*" />
+                <RowDefinition Height="100*" />
+            </Grid.RowDefinitions>
+            <Button Name="CreateResBtn" Content="Dodaj rezerwację" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="1" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+            <Button Name="CloseBtn" Content="Powrót" Grid.Row="15" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="1" Grid.ColumnSpan="1" Margin="0,0,0,0"/>
+            <Label Content="Początek pobytu" Grid.Row="1" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="1" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="FromDate" Text="{Binding Path=DataContext.Input.FromDate, StringFormat=d}"/>
+            <Label Content="Koniec pobytu" Grid.Row="3" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="3" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="ToDate" Text="{Binding Path=DataContext.Input.ToDate}"/>
+            <Label Content="Liczba gości" Grid.Row="5" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="5" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="Guests" Text="{Binding Path=DataContext.Input.NumberOfGuests}"/>
+            <Label Content="Numer pokoju" Grid.Row="7" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="7" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="RoomInfo" Text="{Binding Input.RoomNumber}"/>
+            <Label Content="Imię" Grid.Row="9" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="9" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="NameBox" Text="{Binding Input.FirstName}"/>
+            <Label Content="Nazwisko" Grid.Row="11" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="11" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="SurnameBox" Text="{Binding Path=DataContext.Input.LastName}"/>
+            <Label Content="Email" Grid.Row="13" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="13" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="Email" Text="{Binding Path=DataContext.Input.Email}"/>
+            <Label Content="Numer telefonu" Grid.Row="15" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1"  VerticalAlignment="top" />
+            <TextBox Grid.Row="15" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" VerticalAlignment="Bottom" Name="Phone" Text="{Binding Path=DataContext.Input.Phone}"/>
+            <ListBox Name="ErrorTable" Grid.Column="1" Grid.Row="3" Grid.RowSpan="11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding IsAsync=True}"/>
+        </Grid>
+    </Grid>
+</Window>
